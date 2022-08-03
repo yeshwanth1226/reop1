@@ -1,0 +1,56 @@
+{
+	"name": "yeshcsv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "1.csv",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "c_custkey",
+				"type": "String"
+			},
+			{
+				"name": "c_name",
+				"type": "String"
+			},
+			{
+				"name": "c_address",
+				"type": "String"
+			},
+			{
+				"name": "c_nationkey",
+				"type": "String"
+			},
+			{
+				"name": "c_phone",
+				"type": "String"
+			},
+			{
+				"name": "c_acctbal",
+				"type": "String"
+			},
+			{
+				"name": "c_mktsegment",
+				"type": "String"
+			},
+			{
+				"name": "c_comment",
+				"type": "String"
+			}
+		]
+	}
+}
