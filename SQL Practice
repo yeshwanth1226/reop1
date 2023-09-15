@@ -1,1 +1,8 @@
-
+---For Only Updated data should load into tables---------------
+  insert into dbo._SLS_VisitList(VisitList,VisitListPos,FileLogId)
+		SELECT s.ZVISLISID,s.ZVISTPOS,@filelogid as filelogid
+		FROM #TMP_stg_ZL_FIN_ICM_DO_ZDSDO001_SAP_anil s
+		left join dbo._SLS_VisitList C
+		ON S.ZVISTPOS = C.VisitListPos and  S.ZVISLISID =C.VisitList
+		where s.ZVISLISID IS NOT NULL AND s.ZVISLISID <>'' and C.VisitListPos is null and C.VisitList is null
+		group by s.ZVISLISID,s.ZVISTPOS;
